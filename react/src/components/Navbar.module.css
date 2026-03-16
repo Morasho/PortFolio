@@ -1,0 +1,106 @@
+/* Navbar.module.css */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--nav-h);
+  padding-inline: 2.5rem;
+  background: rgba(13,13,18,0.82);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--clr-border);
+  transition: background var(--transition);
+}
+
+.scrolled {
+  background: rgba(13,13,18,0.97);
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--clr-purple-light);
+  letter-spacing: 0.03em;
+  transition: opacity var(--transition);
+}
+.logo:hover { opacity: 0.75; }
+.logo span { color: var(--clr-purple); }
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.link {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-text-muted);
+  position: relative;
+  transition: color var(--transition);
+}
+.link::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -3px;
+  width: 0; height: 1px;
+  background: var(--clr-purple);
+  transition: width var(--transition);
+}
+.link:hover,
+.linkActive {
+  color: var(--clr-purple-light);
+}
+.link:hover::after,
+.linkActive::after {
+  width: 100%;
+}
+
+/* Mobile toggle */
+.toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.toggle span {
+  display: block;
+  width: 22px; height: 1px;
+  background: var(--clr-text-muted);
+  transition: transform var(--transition), opacity var(--transition);
+}
+.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.open span:nth-child(2) { opacity: 0; }
+.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+@media (max-width: 640px) {
+  .navbar { padding-inline: 1.25rem; }
+  .toggle { display: flex; }
+  .links {
+    display: none;
+    position: absolute;
+    top: var(--nav-h);
+    left: 0; right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    background: rgba(13,13,18,0.98);
+    border-bottom: 1px solid var(--clr-border);
+    padding: 0.5rem 0;
+  }
+  .linksOpen { display: flex; }
+  .link {
+    display: block;
+    width: 100%;
+    padding: 1rem 1.25rem;
+    font-size: 13px;
+    border-bottom: 1px solid var(--clr-border);
+  }
+}
