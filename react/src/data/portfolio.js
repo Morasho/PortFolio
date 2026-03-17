@@ -2,8 +2,8 @@
 // ── Edit this file to personalise your portfolio ──────────
 
 export const profile = {
-  name: 'Your Name',
-  domain: 'YourName.dev',
+  name: 'Victor Morara',
+  domain: 'Victor.dev',
   role: 'Mathematics & Computer Science',
   tagline: 'Builds Things\nThat Matter.',
   bio: [
@@ -17,10 +17,10 @@ export const profile = {
     { value: '∞',   label: 'Curiosity' },
   ],
   contact: {
-    email: 'moraravictor9@email.com',
+    email: 'moraravictor9@gmail.com',
     phone: '+254 797814037',
-    github: 'https://github.com/',
-    linkedin: 'https://linkedin.com/',
+    github: 'https://github.com/Morasho',
+    linkedin: 'https://www.linkedin.com/in/victor-morara-994864358',
   },
   resume: '/resume.pdf', // place your resume PDF in the /public folder
 }
@@ -37,10 +37,10 @@ export const skills = [
 export const projects = [
   {
     num: 'Project_01',
-    title: 'Graph Pathfinding Visualizer',
-    desc: "An interactive web app that visualises Dijkstra's, A*, and BFS algorithms in real time on a customisable grid. Built to deepen understanding of graph theory.",
-    tags: ['Python', 'React', 'Algorithms'],
-    href: '#',
+    title: 'GPS-Based Attendance App',
+    desc: 'A mobile app that allows students to sign attendance only when physically inside the classroom using GPS geofencing. Prevents proxy sign-ins by ensuring only the present student can check in, and instantly generates attendance reports right after class.',
+    tags: ['React', 'Node.js', 'GPS / Maps API'],
+    href: 'https://github.com/Morasho/Mobileapp_Attendance.git',
   },
   {
     num: 'Project_02',
