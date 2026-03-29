@@ -47,7 +47,7 @@ export const projects = [
     title: 'Predictive Grade Analyser',
     desc: 'A machine learning pipeline that predicts student performance using regression and classification models. Achieved 87% accuracy on 1,200+ records.',
     tags: ['Python', 'sklearn', 'Pandas', 'ML'],
-    href: '#',
+    href: 'https://github.com/Morasho/Predictive-Grade-Analyzer.git',
   },
   {
     num: 'Project_03',
