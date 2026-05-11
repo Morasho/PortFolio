@@ -10,6 +10,8 @@
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1rem;
 }
+
+/* ── Card ──────────────────────────────────────────────── */
 .card {
   background: var(--clr-bg-2);
   border: 1px solid var(--clr-border);
@@ -41,6 +43,8 @@
   color: var(--clr-text-muted);
   letter-spacing: 0.05em;
 }
+
+/* ── Progress bar ──────────────────────────────────────── */
 .barBg {
   margin-top: 0.9rem;
   height: 2px;
@@ -51,8 +55,78 @@
   background: linear-gradient(90deg, var(--clr-purple-dark), var(--clr-purple-light));
   transition: width 1.2s cubic-bezier(0.16,1,0.3,1);
 }
+/* Percentage label sitting right-aligned under the bar */
+.levelLabel {
+  font-size: 10px;
+  color: var(--clr-purple-light);
+  letter-spacing: 0.08em;
+  text-align: right;
+  margin-top: 0.35rem;
+  opacity: 0.6;
+  transition: opacity var(--transition);
+}
+.card:hover .levelLabel { opacity: 1; }
+
+/* ── Currently Learning strip ──────────────────────────── */
+.learningWrap {
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 1.6rem;
+  background: var(--clr-bg-2);
+  border: 1px solid var(--clr-border);
+  transition: border-color var(--transition);
+}
+.learningWrap:hover { border-color: rgba(127,119,221,0.3); }
+
+.learningLabel {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--clr-purple-light);
+  white-space: nowrap;
+  padding-right: 1rem;
+  border-right: 1px solid var(--clr-border);
+}
+.learningTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.learningTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 12px;
+  color: var(--clr-text-muted);
+  letter-spacing: 0.03em;
+}
+.learningDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--clr-purple-light);
+  flex-shrink: 0;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1;   transform: scale(1); }
+  50%       { opacity: 0.3; transform: scale(0.6); }
+}
+
+/* ── Responsive ────────────────────────────────────────── */
 @media (max-width: 640px) {
   .section { padding-block: 4rem; }
   .container { padding-inline: 1.25rem; }
   .grid { grid-template-columns: 1fr 1fr; }
+  .learningWrap { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .learningLabel {
+    border-right: none;
+    padding-right: 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--clr-border);
+    width: 100%;
+  }
 }

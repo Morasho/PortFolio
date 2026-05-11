@@ -5,12 +5,52 @@
   margin-inline: auto;
   padding-inline: 2.5rem;
 }
+
+/* ── Two-column layout ─────────────────────────────────── */
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: start;
 }
+
+/* ── Left: photo + bio ─────────────────────────────────── */
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.photoWrap {
+  position: relative;
+  width: 148px;
+  height: 148px;
+  flex-shrink: 0;
+}
+.photo {
+  width: 148px;
+  height: 148px;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
+  position: relative;
+  z-index: 1;
+  filter: grayscale(15%);
+  transition: filter var(--transition);
+}
+.photo:hover { filter: grayscale(0%); }
+
+/* Offset accent border sitting behind the photo */
+.photoBorder {
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--clr-purple);
+  border-radius: 2px;
+  transform: translate(7px, 7px);
+  z-index: 0;
+  opacity: 0.4;
+}
+
 .text {
   color: var(--clr-text-muted);
   font-size: 14px;
@@ -19,6 +59,14 @@
   flex-direction: column;
   gap: 1.1rem;
 }
+
+/* ── Right: stats + GitHub ─────────────────────────────── */
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
 .stats {
   display: flex;
   flex-direction: column;
@@ -44,10 +92,35 @@
   text-transform: uppercase;
   color: var(--clr-text-muted);
 }
+
+/* ── GitHub stats ──────────────────────────────────────── */
+.githubStats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.githubLabel {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--clr-purple-light);
+  margin: 0;
+}
+.githubImg {
+  width: 100%;
+  border-radius: 2px;
+  opacity: 0.85;
+  transition: opacity var(--transition);
+}
+.githubImg:hover { opacity: 1; }
+
+/* ── Responsive ────────────────────────────────────────── */
 @media (max-width: 640px) {
   .section { padding-block: 4rem; }
   .container { padding-inline: 1.25rem; }
   .grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .stats { flex-direction: row; gap: 1rem; }
   .stat { flex: 1; }
+  .photoWrap { width: 120px; height: 120px; }
+  .photo { width: 120px; height: 120px; }
 }

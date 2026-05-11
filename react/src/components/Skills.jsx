@@ -1,6 +1,6 @@
 // src/components/Skills.jsx
 import { useEffect, useRef } from 'react'
-import { skills } from '../data/portfolio'
+import { skills, learning } from '../data/portfolio'
 import SectionHeader from './SectionHeader'
 import styles from './Skills.module.css'
 
@@ -10,7 +10,6 @@ function SkillCard({ icon, name, sub, level, delay }) {
   useEffect(() => {
     const bar = barRef.current
     if (!bar) return
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -32,6 +31,7 @@ function SkillCard({ icon, name, sub, level, delay }) {
       <div className={styles.barBg}>
         <div ref={barRef} className={styles.barFill} style={{ width: 0 }} />
       </div>
+      <div className={styles.levelLabel}>{level}%</div>
     </div>
   )
 }
@@ -41,11 +41,26 @@ export default function Skills() {
     <section className={styles.section} id="skills">
       <div className={styles.container}>
         <SectionHeader num="02" title="Skills" />
+
         <div className={styles.grid}>
           {skills.map((skill, i) => (
             <SkillCard key={skill.name} {...skill} delay={(i % 3) * 0.12} />
           ))}
         </div>
+
+        {learning && learning.length > 0 && (
+          <div className={`${styles.learningWrap} reveal`}>
+            <span className={styles.learningLabel}>Currently Learning</span>
+            <div className={styles.learningTags}>
+              {learning.map(item => (
+                <span key={item} className={styles.learningTag}>
+                  <span className={styles.learningDot} aria-hidden="true" />
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   )
