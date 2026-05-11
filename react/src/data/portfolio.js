@@ -55,13 +55,13 @@ export const learning = [
 export const projects = [
   {
     num: 'Project_01',
-    title: 'GPS-Based Attendance App',
-    desc: 'A mobile app that allows students to sign attendance only when physically inside the classroom using GPS geofencing. Prevents proxy sign-ins by ensuring only the present student can check in, and instantly generates attendance reports right after class.',
-    tags: ['React', 'Node.js', 'GPS / Maps API'],
-    video: '/videos/attendance-demo.mp4',
-    image: '/images/attendance.png',
-    githubHref: 'https://github.com/Morasho/Mobileapp_Attendance',
-    liveHref: null,
+    title: 'Hybrid GNN Fraud Intel',
+    desc: 'The **hybrid-gnn-fraud-intel** project is a full-stack AI-powered fraud detection and intelligence platform that combines multiple machine learning approaches to identify suspicious financial transactions. It uses a hybrid architecture consisting of a Graph Neural Network (GNN) connected to Neo4j graph data, an XGBoost tabular model, and a stacked ensemble model that merges predictions from both systems for improved accuracy. The project includes a FastAPI backend for handling live predictions, alerts, uploads, analytics, explanations, and database interactions, alongside a React + Vite frontend that provides dashboards, fraud monitoring, graph visualizations, model comparisons, and user management interfaces. Supporting this system are Python-based ML pipelines for synthetic data generation, feature engineering, graph construction, model training, evaluation, embedding extraction, and artifact export, making the repository a complete end-to-end fraud intelligence and monitoring ecosystem.',
+    tags: ['Python', 'GNN', 'XGBoost', 'FastAPI', 'React', 'Neo4j'],
+    video: null,
+    image: '/images/fraud-intel.png',
+    githubHref: 'https://github.com/Morasho/hybrid-gnn-fraud-intel',
+    liveHref: 'https://hybrid-gnn-fraud-intel.netlify.app/',
   },
   {
     num: 'Project_02',
@@ -75,6 +75,16 @@ export const projects = [
   },
   {
     num: 'Project_03',
+    title: 'GPS-Based Attendance App',
+    desc: 'A mobile app that allows students to sign attendance only when physically inside the classroom using GPS geofencing. Prevents proxy sign-ins by ensuring only the present student can check in, and instantly generates attendance reports right after class.',
+    tags: ['React', 'Node.js', 'GPS / Maps API'],
+    video: '/videos/attendance-demo.mp4',
+    image: '/images/attendance.png',
+    githubHref: 'https://github.com/Morasho/Mobileapp_Attendance',
+    liveHref: null,
+  },  
+  {
+    num: 'Project_04',
     title: 'Predictive Grade Analyser',
     desc: 'A machine learning pipeline that predicts student performance using regression and classification models. Achieved 87% accuracy on 1,200+ records.',
     tags: ['Python', 'sklearn', 'Pandas', 'ML'],
