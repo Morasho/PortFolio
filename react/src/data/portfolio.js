@@ -42,6 +42,7 @@ export const learning = [
   'System Design',
   'ML Deployment',
   'Docker',
+  'Neo4j'
 ]
 
 // ── Projects ───────────────────────────────────────────────────
@@ -86,11 +87,11 @@ export const projects = [
   {
     num: 'Project_04',
     title: 'Predictive Grade Analyser',
-    desc: 'A machine learning pipeline that predicts student performance using regression and classification models. Achieved 87% accuracy on 1,200+ records.',
-    tags: ['Python', 'sklearn', 'Pandas', 'ML'],
+    desc: 'Built a production-ready machine learning pipeline using XGBoost and MLP Neural Networks to classify students into Pass, Average, or At-Risk categories with ~80% accuracy across 1,200+ records. The system features a FastAPI REST backend, a single-student predictor with SHAP-driven explanations, and a full educator dashboard where teachers upload a class CSV and instantly see a colour-coded risk heatmap, confidence scores, and personalised intervention cards for every student. Includes class trend tracking across multiple uploads — line charts and per-student trajectory arrows show whether at-risk students are improving or declining week over week. Deployed on Render.',
+    tags: ['Python', 'XGBoost', 'FASTAPI', 'SHAP', 'sklearn', 'Pandas', 'ML'],
     video: null,
     image: '/images/grade-analyser.png',
     githubHref: 'https://github.com/Morasho/Predictive-Grade-Analyzer',
-    liveHref: null,
+    liveHref: 'https://predictive-grade-analyser.onrender.com/',
   },
 ]
