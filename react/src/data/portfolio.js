@@ -15,6 +15,7 @@ export const profile = {
     { value: '2+', label: 'Years of Coding' },
     { value: '10+', label: 'Projects Built' },
     { value: '∞',   label: 'Curiosity' },
+    {value: '4',   label: 'Certifications' },
   ],
   photo: '/photo.jpg',   // set to null to hide
   contact: {
@@ -93,5 +94,44 @@ export const projects = [
     image: '/images/grade-analyser.png',
     githubHref: 'https://github.com/Morasho/Predictive-Grade-Analyzer',
     liveHref: 'https://predictive-grade-analyser.onrender.com/',
+  },
+]
+
+  export const certifications = [
+  {
+    title: 'Scrum Fundamentals Certified (SFC™)',
+    issuer: 'SCRUMstudy',
+    date: 'July 2026',
+    desc: 'Passed the certification exam and designated as a Scrum Fundamentals Certified professional. Certificate ID: 1174921.',
+    icon: '⟳',
+    file: '/certificates/scrum.pdf',
+    fileType: 'pdf',
+  },
+  {
+    title: 'AI Safari Program',
+    issuer: 'Power Learn Project',
+    date: '2025',
+    desc: 'Completed a 4-week intensive program covering Agentic Frameworks, AI Automation, Prompt Engineering, and AI Ethics & Governance.',
+    icon: '◈',
+    file: '/certificates/plp.jpeg',
+    fileType: 'image',
+  },
+  {
+    title: 'Cybersecurity & Emerging Technologies',
+    issuer: 'ICT Authority Kenya · Computer Pride',
+    date: 'May 2025',
+    desc: 'Completed Cybersecurity and Emerging Technologies Awareness Training conducted by the ICT Authority, Kenya. Certificate ID: ICTA-1747247604-3716-32004.',
+    icon: '⬡',
+    file: '/certificates/ictcert.pdf',
+    fileType: 'pdf',
+  },
+  {
+    title: 'International Conference on Mathematics & Applied Sciences',
+    issuer: 'JKUAT',
+    date: 'July 2026',
+    desc: 'Attended and presented at the 2nd International Conference on Mathematics and Applied Sciences — "Nurturing Mathematical and Applied Sciences: Integrating Science, Data and Innovation for Sustainable Development."',
+    icon: '∑',
+    file: '/certificates/jkuatcert.jpeg',
+    fileType: 'image',
   },
 ]

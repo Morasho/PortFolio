@@ -4,10 +4,11 @@ import { profile } from '../data/portfolio'
 import styles from './Navbar.module.css'
 
 const NAV_LINKS = [
-  { href: '#about',    label: '01. About' },
-  { href: '#skills',   label: '02. Skills' },
-  { href: '#projects', label: '03. Projects' },
-  { href: '#contact',  label: '04. Contact' },
+  { href: '#about',           label: '01. About' },
+  { href: '#skills',          label: '02. Skills' },
+  { href: '#certifications',  label: '03. Certs' },
+  { href: '#projects',        label: '04. Projects' },
+  { href: '#contact',         label: '05. Contact' },
 ]
 
 export default function Navbar() {
@@ -18,8 +19,6 @@ export default function Navbar() {
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 40)
-
-      // Highlight active section
       const scrollY = window.scrollY + 120
       for (const { href } of NAV_LINKS) {
         const el = document.querySelector(href)
@@ -29,7 +28,6 @@ export default function Navbar() {
         }
       }
     }
-
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])

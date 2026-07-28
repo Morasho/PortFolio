@@ -1,0 +1,187 @@
+/* Certifications.module.css */
+.section { padding-block: 6rem; }
+
+.container {
+  max-width: 920px;
+  margin-inline: auto;
+  padding-inline: 2.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 1.25rem;
+}
+
+/* ── Card ── */
+.card {
+  background: var(--clr-bg-2);
+  border: 1px solid var(--clr-border);
+  padding: 1.75rem;
+  position: relative;
+  overflow: hidden;
+  transition:
+    border-color var(--transition),
+    background var(--transition),
+    transform var(--transition);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--clr-purple), var(--clr-purple-dark));
+}
+
+.card:hover {
+  border-color: var(--clr-purple);
+  background: var(--clr-bg-3);
+}
+
+/* ── Top row ── */
+.cardTop {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--clr-border);
+  font-size: 1rem;
+  color: var(--clr-purple-light);
+  background: var(--clr-purple-glow);
+  flex-shrink: 0;
+  transition: border-color var(--transition);
+}
+.card:hover .icon { border-color: var(--clr-purple); }
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+}
+
+.issuer {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--clr-purple-light);
+}
+
+.date {
+  font-size: 11px;
+  color: var(--clr-text-dim);
+}
+
+.badge {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border: 1px solid rgba(127,119,221,0.3);
+  color: var(--clr-purple);
+  background: var(--clr-purple-glow);
+  white-space: nowrap;
+  align-self: flex-start;
+}
+
+/* ── Content ── */
+.title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--clr-text);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.desc {
+  font-size: 12px;
+  color: var(--clr-text-muted);
+  line-height: 1.85;
+}
+
+/* ── Action buttons ── */
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.1rem;
+}
+
+.previewBtn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border: 1px solid var(--clr-border);
+  background: transparent;
+  color: var(--clr-text-muted);
+  cursor: pointer;
+  transition: border-color var(--transition), color var(--transition), background var(--transition);
+}
+.previewBtn:hover {
+  border-color: var(--clr-purple);
+  color: var(--clr-purple-light);
+  background: var(--clr-purple-glow);
+}
+
+.openBtn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border: 1px solid var(--clr-purple);
+  background: var(--clr-purple-glow);
+  color: var(--clr-purple-light);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.openBtn:hover { background: rgba(127,119,221,0.22); }
+
+/* ── Inline preview ── */
+.preview {
+  margin-top: 1.25rem;
+  border: 1px solid var(--clr-border);
+  overflow: hidden;
+  animation: fadeDown 0.3s ease;
+}
+
+.previewImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.previewPdf {
+  width: 100%;
+  height: 420px;
+  border: none;
+  display: block;
+  background: #fff;
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .section { padding-block: 4rem; }
+  .container { padding-inline: 1.25rem; }
+  .grid { grid-template-columns: 1fr; }
+  .previewPdf { height: 280px; }
+}
